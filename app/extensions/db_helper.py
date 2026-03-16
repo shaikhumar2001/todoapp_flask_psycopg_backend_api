@@ -33,7 +33,7 @@ class DBHelper:
             return []
 
         try:
-            print("[DB INFO] Connection established successfully!")
+            print("[DB INFO] Connection establish   ed successfully!")
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(query or "", params or [])
                 print("[DB INFO] Query executed successfully!")

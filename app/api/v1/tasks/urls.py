@@ -2,7 +2,7 @@ from flask import request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.api.v1.tasks import tasks_bp
-from app.config.config import response_template
+from app.utils.response_template import response_template
 from app.extensions.db_helper import DBHelper
 
 db = DBHelper()

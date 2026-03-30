@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..extensions import db
+from ..extensions.extensions import db
 
 
 class Task(db.Model):

@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..extensions import db, bcrypt
+from ..extensions.extensions import db, bcrypt
 
 
 class User(db.Model):

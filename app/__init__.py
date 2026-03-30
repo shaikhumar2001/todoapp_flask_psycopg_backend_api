@@ -1,6 +1,6 @@
 from flask import Flask
 from .config.config import DevelopmentConfig
-from .extensions import db, jwt, bcrypt, cors
+from .extensions.extensions import db, jwt, bcrypt, cors
 
 
 def create_app(config_object: str | object = DevelopmentConfig) -> Flask:

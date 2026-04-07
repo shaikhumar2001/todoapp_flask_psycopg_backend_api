@@ -19,10 +19,13 @@ CREATE TABLE todoapp.tusertbl (
     user_id BIGSERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
-    password_hash TEXT NOT NULL,
+    password_hash TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE UNIQUE INDEX idx_tusertbl_email ON todoapp.tusertbl(email);
+CREATE INDEX idx_tusertbl_name ON todoapp.tusertbl(name);
 
 -- create task table
 CREATE TABLE todoapp.ttasktbl (
@@ -31,8 +34,10 @@ CREATE TABLE todoapp.ttasktbl (
     title TEXT NOT NULL,
     description TEXT,
     is_completed BOOLEAN NOT NULL DEFAULT FALSE,
-    due_date TIMESTAMPTZ,
+    due_date DATE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX idx_ttasktbl_user_id ON todoapp.ttasktbl(user_id);
+CREATE INDEX idx_ttasktbl_title ON todoapp.ttasktbl(title);

@@ -1,3 +1,4 @@
+# server.py
 from app import create_app
 from app.config.config import Config
 
@@ -9,7 +10,7 @@ conf = Config()
 
 if __name__ == "__main__":
     app.run(
-        host=conf.DB_HOST, 
-        port=conf.DB_PORT, 
+        host=conf.HOST, 
+        port=conf.PORT, 
         debug=conf.DEBUG
     )

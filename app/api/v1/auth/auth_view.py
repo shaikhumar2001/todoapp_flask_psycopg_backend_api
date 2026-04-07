@@ -1,3 +1,4 @@
+# app/api/v1/auth/auth_view.py
 from flask import request
 from flask_jwt_extended import create_access_token
 

@@ -5,7 +5,7 @@ from typing import List, Any
 from pprint import pprint
 from . import log_helper as log
 from app.config.config import Config
-from app.utils.db_middleware import get_current_database_name
+from app.utils.db_middleware import get_current_db_name
 
 conf = Config()
 
@@ -80,7 +80,7 @@ class DBHelper:
         """        
         # Get database name from thread-local storage (set by middleware)
         # If not set, use default from settings
-        db_name = get_current_database_name() or conf.DB_NAME
+        db_name = get_current_db_name() or conf.DB_NAME
 
         # Build connection parameters with current database name
         conn_params = {

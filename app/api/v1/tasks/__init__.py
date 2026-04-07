@@ -2,4 +2,4 @@ from flask import Blueprint
 
 tasks_bp = Blueprint("tasks", __name__)
 
-from . import urls  # noqa: F401
+from . import task_view  # noqa: F401

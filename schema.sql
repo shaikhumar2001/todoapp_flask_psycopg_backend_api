@@ -40,4 +40,5 @@ CREATE TABLE todoapp.ttasktbl (
 );
 
 CREATE INDEX idx_ttasktbl_user_id ON todoapp.ttasktbl(user_id);
-CREATE INDEX idx_ttasktbl_title ON todoapp.ttasktbl(title);
+CREATE INDEX idx_ttasktbl_due_date ON todoapp.ttasktbl(due_date);
+CREATE INDEX idx_ttasktbl_is_completed ON todoapp.ttasktbl(is_completed);

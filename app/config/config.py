@@ -5,7 +5,7 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "change-me")
     JSON_SORT_KEYS = False
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", os.getenv("SECRET_KEY", "change-me"))
-    ALLOWED_DATABASES = ["todoapp_db"]  # For validating tenant DB names from headers
+    ALLOWED_DATABASES = ["todoapp_db", "todoapp_db_uat", "todoapp_db_test"]  # For validating tenant DB names from headers
 
     # server settings
     HOST = os.getenv("HOST", "0.0.0.0")

@@ -1,8 +1,11 @@
 -- create role
 CREATE ROLE todoapp_user WITH CREATEDB LOGIN PASSWORD 'todoapp@786';
 
--- create database
+-- create main database
 CREATE DATABASE todoapp_db WITH OWNER todoapp_user;
+
+-- grant privileges
+GRANT ALL PRIVILEGES ON DATABASE todoapp_db TO todoapp_user;
 
 -- connect to database with todoapp_user
 \c todoapp_db
